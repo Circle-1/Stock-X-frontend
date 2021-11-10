@@ -1,42 +1,68 @@
 import Link from 'next/link'
 import Pic from '../Logo/Stock-X-logos_transparent.png'
 import Image from "next/image"
-import About from '../pages/About';
 import { useRouter } from 'next/router';
 
-const NavBar = () => {
-return(
-
-<nav class="bg-white border-gray-200 px-2 p-2.5">
-  <div class="container mx-auto flex flex-wrap items-center justify-between">
-  <a href="#" class="flex">
-    <svg class="h-10 mr-3" width="51" height="70" viewBox="0 0 51 70" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0)"><path d="M1 53H27.9022C40.6587 53 51 42.7025 51 30H24.0978C11.3412 30 1 40.2975 1 53Z" fill="#76A9FA"></path><path d="M-0.876544 32.1644L-0.876544 66.411C11.9849 66.411 22.4111 55.9847 22.4111 43.1233L22.4111 8.87674C10.1196 8.98051 0.518714 19.5571 -0.876544 32.1644Z" fill="#A4CAFE"></path><path d="M50 5H23.0978C10.3413 5 0 15.2975 0 28H26.9022C39.6588 28 50 17.7025 50 5Z" fill="#1C64F2"></path></g><defs><clipPath id="clip0"><rect width="51" height="70" fill="white"></rect></clipPath></defs></svg>
-      <span class="self-center text-lg font-semibold whitespace-nowrap">Stock-X</span>
-  </a>
-  <div class="flex md:order-2">
-      <Link href="https://github.com/Circle-1/Stock-X"><button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">Open Project</button></Link>
-      <button data-collapse-toggle="mobile-menu-4" type="button" class="md:hidden text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center justify-center" aria-controls="mobile-menu-4" aria-expanded="false">
-      <span class="sr-only">Open main menu</span>
-      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-      <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-    </button>
-  </div>
-  <div class="hidden md:flex justify-between items-center w-full md:w-auto md:order-1" id="mobile-menu-4">
-    <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
-      <li>
-        <Link href="/" class="bg-blue-700 md:bg-transparent text-white block pl-3 pr-4 py-2 md:text-blue-700 md:p-0 rounded" aria-current="page">Home</Link>
-      </li>
-      <li>
-        <Link href="/Predict" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">Predict</Link>
-      </li>
-      <li>
-        <Link href="/About" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">About</Link>
-      </li>
+ const NavBar = () => {
+        const router = useRouter(); 
+    return (
+        <nav className="flex flex-wrap bg-black border-b-black-2 fixed inset-x-0">
+                    
+                    <div className="flex flex-grow max-w-5xl lg:max-w-full  mx-10 ">
+       
+       <Image 
+       className="object-contain"
+       src={Pic} 
+       width={100} 
+       height={100}
+       
+       />
+       </div>
+                    
+            <ul className=" flex flex-grow justify-evenly items-center max-w-xs flex-wrap: nowrap text-xs text-white">     
+       
+        <li>
+                 <div className=" flex flex-col group cursor-pointer font-semibold items-center w-12 sm:w-20 hover:text-red-600 ">    
+                 <div  className=" h-5 mb-1 py-0 group-hover:animate-bounce">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                         <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                        </svg> 
+                </div> 
+                <Link classname=" opacity-100 text-xs group-hover:100 hover:opacity-100" href = "/"> HOME</Link>
+                </div>
+        </li>
+      
+        <li>
+                <div className = " flex flex-col group cursor-pointer font-semibold items-center w-12 sm:w-20 hover:text-red-600 ">
+                <div  className=" h-5 mb-1 py-0 group-hover:animate-bounce">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                         <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clip-rule="evenodd" />
+                         <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z" />
+                        </svg>
+                </div> 
+        <div 
+        onClick={() => router.push('/News/1')}>NEWS</div></div>
+        </li>
+      
+        <li>
+                <div className=" flex flex-col group cursor-pointer font-semibold items-center w-12 sm:w-20 hover:text-red-600 ">    
+                <div  className=" h-5 mb-1 py-0 group-hover:animate-bounce">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd" />
+                </svg>
+                </div> 
+                <Link classname=" opacity-100 text-xs group-hover:100 hover:opacity-100 whitespace-nowrap " href = "/About"> ABOUT US</Link> </div>
+        </li>
     </ul>
-  </div>
-  </div>
-</nav>
-)       
-}
+    
+    </nav>
+  )
+  }
 
-export default NavBar
+   export default NavBar
+/*  
+        
+        <HomeIcon className=" h-5 mb-1  group-hover:animate-bounce"/> 
+        <NewspaperIcon className=" h-5 mb-1  group-hover:animate-bounce"/>
+        <FireIcon className=" h-5 mb-1  group-hover:animate-spin "/>  
+*/
