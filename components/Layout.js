@@ -1,14 +1,17 @@
-import Footer from "./Footer";
-import Navbar from "./Navbar";
+import Head from 'next/head'
+import Nav from '../components/NavBar'
 
-const Layout = ({ children }) => {
-    return ( 
-        <div className="content">
-            <Navbar />
-            { children }
-            <Footer />
-        </div>
-     );
-}
- 
-export default Layout;
+
+export default function Layout() {
+    return (
+      <>
+      <div >
+        <Head>
+          <title>CIRCLE 1</title>
+          <meta name="Stock-X" content="Stock Market Prediction" />
+        </Head>
+        <Nav/>
+  </div> 
+  </> 
+  )
+  }
