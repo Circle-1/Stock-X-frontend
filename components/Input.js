@@ -22,7 +22,7 @@ const handleSubmission = e => {
       <h4 className="  text-black text-3xl flex flex-grow mx-20  items-start font-semibold text-center justify-center ">A STOCK PREDICTING MODEL BASED ON CNN-LSTM </h4>
       <h2 className="  text-black text-xl flex flex-grow mx-20  items-start font-semibold text-center justify-center ">
    
-      Get started by uploading your data file!!! </h2>
+      Get started by uploading your data file (in CSV/Excel format)!!! </h2>
     <div className=" flex flex-col group m-auto items-center  justify-center w-auto h-96">
 
      <div className=" flex flex-row flex-none group  items-center bg-[#95ee7f] bg-opacity-50 justify-center whitespace:nowrap rounded-lg "> 

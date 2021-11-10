@@ -1,9 +1,11 @@
+import Layout from '../components/Layout'
 import styles from '../styles/Home.module.css'
-import Link from 'next/link'
+import Link from 'next/dist/client/link'
+import 'tailwindcss/tailwind.css'
 
-const About = () => {
-    return ( 
-        <div>
+export default function About() {
+    return (
+      <div>
             <div className={styles.container}>
             <h1>About</h1>
             <p>Stock-X is a capstone project which is mainly focused on Fintech. The main objective of this project is to analyse any kind of stock market data (from any company and market) and then provide prediction and suggestions to stockholders to invest in a specfic company</p>
@@ -18,10 +20,5 @@ const About = () => {
             <p className={styles.card}><p>Vineetha R S</p>          2019506115</p> 
             <p className={styles.card}><p>Anurag Bagde</p>          2019506120</p>   
         </div>
-        
-
-     );
-
+  )
 }
- 
-export default About;
