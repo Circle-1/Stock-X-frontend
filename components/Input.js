@@ -4,7 +4,7 @@ import{
   UploadIcon
   } from "@heroicons/react/outline"
 
-import axios from 'axios'
+import axios from 'axios';
 
 export default function Input() {
   const [setSelectedFile] = useState('')
@@ -17,8 +17,20 @@ export default function Input() {
     const data = new FormData();
     data.append("data", setSelectedFile, setSelectedFile.name);
     console.log(setSelectedFile);
-    axios.post("api/uploadfile", data);
+    axios.post("http://localhost:1000/server", data, {
+      headers: {
+        'Content-Type': 'multipart/form-data' 
+      }
+    }).then(function(res) {
+      console.log("Server accepted");
+    }).catch(function(err) {
+      console.log(err);
+    });
   };
+
+  let handleFileUpload = event => {
+    setSelectedFile = event.target.files[0]
+  }
 
   let fileData = () => {
     if(setSelectedFile) {
@@ -52,7 +64,17 @@ export default function Input() {
     }
   };
 const handleSubmission = e => {
-  console.log("Error!");
+  if(fileData()) {
+    console.log("File present!");
+    console.log("Checking upload fn...");
+    onFileUpload();
+    console.log("Redirecting to TFJS function....");
+
+  }
+  else {
+    console.log("Error!");
+  }
+  
 }
 
   return (
@@ -81,4 +103,4 @@ const handleSubmission = e => {
   </div> 
   </div>
 )
-  }
+}

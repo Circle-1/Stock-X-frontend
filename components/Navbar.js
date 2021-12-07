@@ -9,7 +9,6 @@ return(
 
 <nav class="bg-white border-gray-200 px-2 p-2.5">
   <div class="container mx-auto flex flex-wrap items-center justify-between">
-  <img src={Pic} width="50px" height="50px" alt="logo" />
   <a href="#" class="flex">
       <span class="self-center text-lg font-semibold whitespace-nowrap">Stock-X</span>
   </a>
